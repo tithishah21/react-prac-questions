@@ -9,7 +9,7 @@
 // Ensure proper component reusability and props usage.   CODE:
 
 import React from "react";
-// import ReactDOM from "react-dom";
+import ReactDOM from "react-dom";
 // UserProfile Component
 const UserProfile = ({ name, email, imageUrl }) => {
 return (
@@ -57,4 +57,4 @@ imageUrl={user.imageUrl}
 );
 };
 // Rendering UserList inside the root element
-ReactDOM.render(<UserList />, document.getElementById(“root"));
+ReactDOM.render(<UserList />, document.getElementById("root"));
