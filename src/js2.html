@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+</head>
+<body>
+    <h1>Select your type veg or non veg</h1><br/>
+    <form onsubmit="view(event)">
+        <label for="veg" value="veg">Veg</label><input type="radio" name="type" value="veg" id="veg" /><br/>
+        <label for="nonveg" value="nonveg">Non-Veg</label><input type="radio" name="type" value="nonveg" id="nonveg" />
+        <br/><br/><button type="submit">Submit</button>
+    </form>
+
+    <div id="vmenu"></div>
+    <div id="nvmenu"></div>
+    <script>
+        function view(e){
+            e.preventDefault();
+            const selectedType= document.forms[0].type.value;
+            let v_items=["paneer","ghee","aloo"];
+            let nv_items=["chicken","fish","mutton"];
+            if(selectedType=="veg"){
+                document.getElementById("vmenu").innerHTML=v_items.toString();
+            }
+            else if(selectedType=="nonveg"){
+                document.getElementById("nvmenu").innerHTML=nv_items.toString();
+            }
+            else{
+                alert(`please select atleast 1`);
+            }
+        }
+    </script>
+</body>
+</html>

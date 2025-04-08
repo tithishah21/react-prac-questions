@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color behind the div</title>
+</head>
+<body>
+    <div id="ab">hellos</div>
+    <label for="colors">Choose a color:</label>
+    <select name="colors" id="colors">
+        <option value="yellow">Yellow</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        
+    </select>
+
+    <script>
+        let color=document.getElementById("colors");
+        let x=document.getElementById("ab");
+        color.addEventListener("change",()=>{
+            x.style.backgroundColor=color.value;
+        })
+    </script>
+</body>
+</html>

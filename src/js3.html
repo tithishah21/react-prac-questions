@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <form onsubmit="Validate(event)">
+        Enter age: <input type="number" /><br/>
+        Enter name:<input type="text" name="name" id="name" /><br/>
+        Enter gmail id:<input type="text" name="gmail" id="gmail" /><br/>
+        Enter password:<input type="password" name="password" id="password" /><br/>
+        Enter confirm password:<input type="password" name="conpass" id="conpass" /><br/>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="details"></div>
+    <script>
+        function Validate(e){
+            e.preventDefault();
+            let name=document.getElementById("name").value;
+            let gm=document.getElementById("gmail").value;
+            let pass=document.getElementById("password").value;
+            let cpass=document.getElementById("conpass").value;
+            if(!/^[\w.]+@gmail\.com$/.test(gm)){
+                alert("enter valid gmail id");
+                return;
+            }
+            if(pass!=cpass){
+                alert("password and confirm password aint matching");
+                return;
+            }
+            if(!/^[\w]+[\d]$/.test(pass)){
+                alert("password must have atleast 5 letters, few digits and few special character");
+                return;
+            }
+            
+            document.getElementById("details").innerHTML=`finally you're registered, Mrs.${name} `
+        }
+    </script>
+</body>
+</html>
