@@ -6,7 +6,8 @@
 // •
 // Use React’s render method to display the UserList component inside the root element.
 // •
-// Ensure proper component reusability and props usage.   CODE:
+// Ensure proper component reusability and props usage.
+//CODE:
 
 import React from "react";
 import ReactDOM from "react-dom";
